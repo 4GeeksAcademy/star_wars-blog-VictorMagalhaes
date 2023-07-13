@@ -1,30 +1,40 @@
-import React from "react";
+import React, {useContext} from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+
+	const {store, actions} = useContext(Context);
+
     return (
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
+        <nav className="navbar navbar-light bg-light">
+            <div className="logo">
 				<Link to="/">
-					<img src="https://www.freepnglogos.com/uploads/star-wars-logo-31.png" width="200" alt="star wars logo" height="24" class="d-inline-block align-text-top"/>
-                    Bootstrap
+					<img src="https://logowik.com/content/uploads/images/528_star_wars.jpg" width="200" alt="star wars logo" height="80" bg="light" className="d-inline-block align-text-top"/>
+                  
                 </Link>
 				<br/>
-				<Link to="/">
-					<div class="dropdown">
-						<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-							
-						</button>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-						</ul>
-					</div>
-						<button className="btn btn-primary"></button>
-                </Link>
-				
-            </div>
+				<div className="btn-group">
+					<button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="dropdownMenuClickableInside" aria-expanded="false">
+						Favorites <span className="bg-light rounded p-1 text-secondary text-center">{store.favorite.length}</span>
+					</button>
+					<ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuClickableInside">
+						{store.favorite.map((fav, index) => {
+							return(
+								<li key={index}>
+									<a className="dropdown-item d-flex justify-content-between ps-2 pe-2" href="#">
+										{fav}
+										<i className="fas fa-trash pt-1"
+											onClick={() => {
+												actions.deleteFavorite(fav)
+											}}
+										></i>
+									</a>
+								</li>
+							)})}
+					</ul>
+				</div>
+			</div>
         </nav>
     )
 }

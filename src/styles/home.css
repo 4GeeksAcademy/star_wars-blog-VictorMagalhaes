@@ -1,0 +1,26 @@
+.card{
+    margin:5px;
+    
+}
+
+.card-body {
+    min-width: 300px;
+    margin-right: 5px;
+}
+
+div::-webkit-scrollbar{
+    display: none;
+}
+
+.card-text {
+    margin-top: 1px;
+}
+
+.img{
+height: 200px;
+width: 400px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
