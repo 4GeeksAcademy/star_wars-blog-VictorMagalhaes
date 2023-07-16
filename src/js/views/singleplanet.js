@@ -31,33 +31,33 @@ const SinglePlanet = () => {
     }
 
     return (
-        <div class="card">
-                <img src="https://mcdn.wallpapersafari.com/medium/58/65/GOS7d8.jpg" class="card-img-top" alt="..."></img>
-                <div class="card-body">
+        <div className="card-single">
+                <img src="https://mcdn.wallpapersafari.com/medium/58/65/GOS7d8.jpg" className="card-img-single" alt="..."></img>
+                <div className="card-body-single">
                     {onePlanet ? (
                     <div className="text-center">
-                        <h5 class="card-title mt-3 mb-4">
+                        <h1 className="card-title mt-3 mb-4">
                         {onePlanet.name}
-                        </h5>
-                            <p class="card-text">
-                                <p class='mt-0 mb-0'>Population: {onePlanet.population}</p>
-                                <p class='mt-0 mb-0'>Terrain: {onePlanet.terrain}</p>
-                                <p class='mt-0 mb-0'>Climate: {onePlanet.climate}</p>
-                                <p class='mt-0 mb-0'>Gravity: {onePlanet.gravity}</p> 
-                                <p class='mt-0 mb-0'>Rotation Period: {onePlanet.rotation_period}</p>
+                        </h1>
+                            <p className="card-text">
+                                <p className='mt-0 mb-0'>Population: {onePlanet.population}</p>
+                                <p className='mt-0 mb-0'>Terrain: {onePlanet.terrain}</p>
+                                <p className='mt-0 mb-0'>Climate: {onePlanet.climate}</p>
+                                <p className='mt-0 mb-0'>Gravity: {onePlanet.gravity}</p> 
+                                <p className='mt-0 mb-0'>Rotation Period: {onePlanet.rotation_period}</p>
+                                <Link to="/">
+                                <span className="btn btn-primary btn-lg my-5 text-center" href="#" role="button">
+                                    Back home
+                                </span>
+                                </Link>
                             </p>
                     </div>
                     ) : (
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
                     </div>
                     )}
                 </div>
-                    <Link to="/">
-                        <span className="btn btn-primary btn-lg" href="#" role="button">
-                            Back home
-                        </span>
-                    </Link>
         </div>
     )
 }

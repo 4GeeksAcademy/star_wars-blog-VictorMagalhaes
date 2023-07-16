@@ -29,33 +29,33 @@ const SingleCharacter = (props) => {
         }
     
         return (
-            <div class="card">
-                <img src="https://denvercatholic.org/wp-content/uploads/2016/02/starwarshorizontal.jpg" class="card-img-top" alt="..."></img>
-                <div class="card-body">
+            <div className="card-single">
+                <img src="https://denvercatholic.org/wp-content/uploads/2016/02/starwarshorizontal.jpg" className="card-img-single" alt="..."></img>
+                <div className="card-body-single">
                     {oneCharacter ? (
                         <div className="text-center">
-                            <h5 class="card-title mt-3 mb-4">
+                            <h1 className="card-title mt-3 mb-4">
                             {oneCharacter.properties.name}
-                            </h5>
-                                <p class="card-text">
-                                    <p class='mt-0 mb-0'>Gender: {oneCharacter.properties.gender}</p>
-                                    <p class='mt-0 mb-0'>Birth Year: {oneCharacter.properties.birth_year}</p>
-                                    <p class='mt-0 mb-0'>Height: {oneCharacter.properties.height}</p>
-                                    <p class='mt-0 mb-0'>Hair Color: {oneCharacter.properties.hair_color}</p> 
-                                    <p class='mt-0 mb-0'>Eye Color: {oneCharacter.properties.eye_color}</p>
+                            </h1>
+                                <p className="card-text">
+                                    <p className='mt-0 mb-0'>Gender: {oneCharacter.properties.gender}</p>
+                                    <p className='mt-0 mb-0'>Birth Year: {oneCharacter.properties.birth_year}</p>
+                                    <p className='mt-0 mb-0'>Height: {oneCharacter.properties.height}</p>
+                                    <p className='mt-0 mb-0'>Hair Color: {oneCharacter.properties.hair_color}</p> 
+                                    <p className='mt-0 mb-0'>Eye Color: {oneCharacter.properties.eye_color}</p>
+                                    <Link to="/">
+                                        <span className="btn btn-primary btn-lg my-5 text-center" href="#" role="button">
+                                            Back home
+                                        </span>
+			                        </Link>
                                 </p>
                         </div>
                     ) : (
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
                     </div>
                     )}
                 </div>
-                <Link to="/">
-                    <span className="btn btn-primary btn-lg" href="#" role="button">
-                        Back home
-                    </span>
-			    </Link>
             </div>
         )
     

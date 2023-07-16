@@ -1,15 +1,28 @@
 .card{
-    margin:5px;
-    
+    margin-left:20px; 
+    border-radius: 20px;  
 }
-
+.card:hover {
+    color: white;
+    background: rgb(120, 173, 189);
+  }
+body{
+    background-color: rgb(31, 30, 30);
+    font-family: 'Exo 2', sans-serif;
+}
+.navbar{
+    display: flex;
+    margin: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
 .card-body {
     min-width: 300px;
     margin-right: 5px;
 }
 
 div::-webkit-scrollbar{
-    display: none;
+    display:none;
 }
 
 .card-text {
@@ -23,4 +36,45 @@ width: 400px;
 .container{
     display: flex;
     flex-direction: column;
+}
+.card-single{
+    height: 600px;
+    display:flex;
+    color: white;
+}
+.card-img-single{
+    height: 600px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+.card-body-single{
+    border-color: rgb(158, 156, 156);
+    border-style:groove;
+    margin:auto;
+    padding: 100px;
+    border-radius: 10px;
+}
+.card_buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.far.fa-heart{
+    color:red;
+    font-size:30px;
+}
+.far.fa-heart:hover{
+    color: yellow;
+    font-weight: bold;
+}
+
+.btn_favorite{
+    background-color: transparent;
+    border: none;
+    size: 20px;
+}
+.scrollmenu{
+    margin-left: 30px;
 }

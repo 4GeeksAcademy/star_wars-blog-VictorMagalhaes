@@ -36,29 +36,31 @@ const Planet = (props) => {
     }
 
     return (
-        <div class="card card-body">
-            <img src="https://mcdn.wallpapersafari.com/medium/58/65/GOS7d8.jpg" class="card-img-top" alt="..." style={{ borderRadius: 5 }}></img>
-            <h5 class="card-title mt-3 mb-4">
-				<p>{props.planet.name}</p>
-            </h5>
-                {planet ? (
-                    <p class="card-text">
-                        <p class='mt-0 mb-0'>Population: {planet.population}</p>
-                        <p class='mt-0 mb-0'>Terrain: {planet.terrain}</p> 
-                    </p>
-                ) : (
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            )}
+        <div className="card card-body">
+            <img src="https://mcdn.wallpapersafari.com/medium/58/65/GOS7d8.jpg" className="card-img-top" alt="..." style={{ borderRadius: 5 }}></img>
+            <div className="card-body">
+                <h5 className="card-title mt-3 mb-4">
+                    <p>{props.planet.name}</p>
+                </h5>
+                    {planet ? (
+                        <p className="card-text">
+                            <p className='mt-0 mb-0'>Population: {planet.population}</p>
+                            <p className='mt-0 mb-0'>Terrain: {planet.terrain}</p> 
+                        </p>
+                    ) : (
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                )}
+            </div>
             <div className="card_buttons">
-                    <a href="" className="card-link" 
+                    <button type="button" className="card-link btn-primary rounded" 
                         onClick={() => navigate("/singleplanet/" + props.planet.uid )}
                         >Learn More
-                    </a>
-                    <button type="button" class="btn btn-light p-0" onClick={() => {
+                    </button>
+                    <button type="button" className="btn_favorite" onClick={() => {
                         actions.addFavorite(props.planet.name)}}
-                        >Favorite
+                        ><i className="far fa-heart"></i>
                     </button>               
                 </div> 
         </div>

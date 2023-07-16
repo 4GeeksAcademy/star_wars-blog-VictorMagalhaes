@@ -7,14 +7,15 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context);
 
     return (
-        <nav className="navbar navbar-light bg-light">
+        <nav className="navbar">
             <div className="logo">
 				<Link to="/">
 					<img src="https://logowik.com/content/uploads/images/528_star_wars.jpg" width="200" alt="star wars logo" height="80" bg="light" className="d-inline-block align-text-top"/>
                   
                 </Link>
+			</div>
 				<br/>
-				<div className="btn-group">
+				<div className="btn-group mx-5">
 					<button type="button" className="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" id="dropdownMenuClickableInside" aria-expanded="false">
 						Favorites <span className="bg-light rounded p-1 text-secondary text-center">{store.favorite.length}</span>
 					</button>
@@ -33,8 +34,7 @@ export const Navbar = () => {
 								</li>
 							)})}
 					</ul>
-				</div>
-			</div>
+				</div>			
         </nav>
     )
 }

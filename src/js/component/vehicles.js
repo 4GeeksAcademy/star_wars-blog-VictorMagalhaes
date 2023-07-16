@@ -37,32 +37,34 @@ const Vehicle = (props) => {
     }
 
     return (
-        <div class="card card-body">
-            <img src="https://www.cnet.com/a/img/resize/088b73f8a694457fcdd0551af892b37971a2b22a/hub/2015/02/05/dacccbeb-a855-4605-b581-d7f61975fdd5/star-wars-vehicles-millennium-falcon-1.jpg?auto=webp&width=1200" class="card-img-top" alt="..." style={{ borderRadius: 5 }}></img>
-            <h5 class="card-title mt-3 mb-4">
-				<p>{props.vehicle.name}</p>
-            </h5>
-                {vehicle ? (
-                    <p class="card-text">
-                        <p class='mt-0 mb-0'>Model: {vehicle.model}</p>
-                        <p class='mt-0 mb-0'>Crew: {vehicle.crew}</p>
-                        <p class='mt-0 mb-0'>Capacity: {vehicle.cargo_capacity}</p> 
-                        <p class='mt-0 mb-0'>Cost: {vehicle.cost_in_credits}</p>
-                        
-                    </p>
-                ) : (
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            )}
+        <div className="card card-body">
+            <img src="https://www.cnet.com/a/img/resize/088b73f8a694457fcdd0551af892b37971a2b22a/hub/2015/02/05/dacccbeb-a855-4605-b581-d7f61975fdd5/star-wars-vehicles-millennium-falcon-1.jpg?auto=webp&width=1200" className="card-img-top" alt="..." style={{ borderRadius: 5 }}></img>
+            <div className="card-body">
+                <h5 className="card-title mt-3 mb-4">
+                    <p>{props.vehicle.name}</p>
+                </h5>
+                    {vehicle ? (
+                        <p className="card-text">
+                            <p className='mt-0 mb-0'>Model: {vehicle.model}</p>
+                            <p className='mt-0 mb-0'>Crew: {vehicle.crew}</p>
+                            <p className='mt-0 mb-0'>Capacity: {vehicle.cargo_capacity}</p> 
+                            <p className='mt-0 mb-0'>Cost: {vehicle.cost_in_credits}</p>
+                            
+                        </p>
+                    ) : (
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                )}
+            </div>
             <div className="card_buttons">
-                    <a href="" className="card-link" 
+                    <button type="button" className="card-link btn-primary rounded" 
                         onClick={() => navigate("/singlevehicle/" + props.vehicle.uid )}
                         >Learn More
-                    </a>
-                    <button type="button" class="btn btn-light p-0" onClick={() => {
+                    </button>
+                    <button type="button" className="btn_favorite" onClick={() => {
                         actions.addFavorite(props.vehicle.name)}}
-                        >Favorite
+                        ><i className="far fa-heart"></i>
                     </button>               
                 </div> 
         </div>

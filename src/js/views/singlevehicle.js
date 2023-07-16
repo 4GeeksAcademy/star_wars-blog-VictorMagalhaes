@@ -33,32 +33,30 @@ const SingleVehicle = () => {
 
 
     return (
-        <div class="card">
-                <img src="https://www.cnet.com/a/img/resize/088b73f8a694457fcdd0551af892b37971a2b22a/hub/2015/02/05/dacccbeb-a855-4605-b581-d7f61975fdd5/star-wars-vehicles-millennium-falcon-1.jpg?auto=webp&width=1200" class="card-img-top" alt="..."></img>
-                <div class="card-body">
+        <div className="card-single">
+                <img src="https://www.cnet.com/a/img/resize/088b73f8a694457fcdd0551af892b37971a2b22a/hub/2015/02/05/dacccbeb-a855-4605-b581-d7f61975fdd5/star-wars-vehicles-millennium-falcon-1.jpg?auto=webp&width=1200" className="card-img-single" alt="..."></img>
+                <div className="card-body-single">
                     {oneVehicle ? (
                     <div className="text-center">
-                        <h5 class="card-title mt-3 mb-4">{oneVehicle.properties.name}</h5>
-                            <p class="card-text">
-                                <p class='mt-0 mb-0'>Model: {oneVehicle.properties.model}</p>
-                                <p class='mt-0 mb-0'>Crew: {oneVehicle.properties.crew}</p>
-                                <p class='mt-0 mb-0'>Capacity: {oneVehicle.properties.capacity}</p> 
-                                <p class='mt-0 mb-0'>Cost: {oneVehicle.properties.cost}</p>
+                        <h1 className="card-title mt-3 mb-4">{oneVehicle.properties.name}</h1>
+                            <p className="card-text">
+                                <p className='mt-0 mb-0'>Model: {oneVehicle.properties.model}</p>
+                                <p className='mt-0 mb-0'>Crew: {oneVehicle.properties.crew}</p>
+                                <p className='mt-0 mb-0'>Capacity: {oneVehicle.properties.capacity}</p> 
+                                <p className='mt-0 mb-0'>Cost: {oneVehicle.properties.cost}</p>
+                                <Link to="/">
+                                    <span className="btn btn-primary btn-lg my-5 text-center" href="#" role="button">
+                                        Back home
+                                    </span>
+                                </Link>
                             </p>
                     </div>
                     ) : (
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     )
                     }            
-                </div>
-                <div className="back_home">
-                    <Link to="/">
-                        <span className="btn btn-primary btn-lg" href="#" role="button">
-                            Back home
-                        </span>
-                    </Link>
                 </div>
         </div>
     )

@@ -81,32 +81,32 @@ export const Home = () => {
 
 	return (
 		<div className="scrollmenu" >
-			<div class="py-2" style={{overflowX: 'auto', overflowY: 'hidden', paddingLeft: '10', paddingRight: '10'}}>
-				<h2 class="font-weight-light">Characters</h2>
-				<div class="d-flex flex-row flex-nowrap">
+			<div className="py-2" style={{overflowX: 'auto'}}>
+				<h1 className="font-bold text-white text-center my-5">Characters</h1>
+				<div className="d-flex flex-row flex-nowrap">
 					{characters.length !== 0 ? showCharacters() : (
-						<div class="spinner-border" role="status">
-							<span class="visually-hidden">Loading...</span>
+						<div className="spinner-border" role="status">
+							<span className="visually-hidden">Loading...</span>
 						</div>
 					)}
 				</div>
 			</div>
-			<div class="py-2" style={{overflowX: 'auto', overflowY: 'hidden', paddingLeft: '10', paddingRight: '10'}}>
-				<h2 class="font-weight-light">Planets</h2>
-				<div class="d-flex flex-row flex-nowrap">
+			<div className="py-2" style={{overflowX: 'scroll', overflowY: 'visible', paddingLeft: '10', paddingRight: '10'}}>
+				<h1 className="font-bold text-white text-center my-5">Planets</h1>
+				<div className="d-flex flex-row flex-nowrap">
 					{planets.length !== 0 ? showPlanets() : (
-						<div class="spinner-border" role="status">
-							<span class="visually-hidden">Loading...</span>
+						<div className="spinner-border" role="status">
+							<span className="visually-hidden">Loading...</span>
 						</div>
 					)}
 				</div>				
 			</div>
-			<div class="py-2" style={{overflowX: 'auto', overflowY: 'hidden', paddingLeft: '10', paddingRight: '10'}}>
-				<h2 class="font-weight-light">Vehicles</h2>
-				<div class="d-flex flex-row flex-nowrap">
+			<div className="py-2" style={{overflowX: 'auto', overflowY: 'hidden', paddingLeft: '10', paddingRight: '10'}}>
+				<h1 className="font-bold text-white text-center my-5">Vehicles</h1>
+				<div className="d-flex flex-row flex-nowrap">
 					{vehicles.length !== 0 ? showVehicles() : (
-						<div class="spinner-border" role="status">
-							<span class="visually-hidden">Loading...</span>
+						<div className="spinner-border" role="status">
+							<span className="visually-hidden">Loading...</span>
 						</div>
 					)}
 				</div>				
